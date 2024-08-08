@@ -46,10 +46,10 @@ function App() {
             })
     }
 
-    const getTime() => {
-        fetchTime()
-        setDate(new Date(time * 1000).toLocaleDateString().toLocaleString())
-    }, [])
+    // const getTime() => {
+    //     fetchTime()
+    //     setDate(new Date(time * 1000).toLocaleDateString().toLocaleString())
+    // }, [])
 
     useEffect(() => {
         fetchAPIHealth()

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -46,10 +45,10 @@ function App() {
             })
     }
 
-    // const getTime() => {
-    //     fetchTime()
-    //     setDate(new Date(time * 1000).toLocaleDateString().toLocaleString())
-    // }, [])
+    const getTime = async () => {
+        fetchTime()
+        setDate(new Date(time * 1000).toLocaleDateString().toLocaleString())
+    }
 
     useEffect(() => {
         fetchAPIHealth()
@@ -61,9 +60,6 @@ function App() {
     return (
         <>
             <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
                 <a href="https://react.dev" target="_blank">
                     <img src={reactLogo} className="logo react" alt="React logo" />
                 </a>
@@ -73,13 +69,13 @@ function App() {
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
                 </button>
-                <button onClick={() => getTime()}>
-                    Current Time: {time}
-                </button>
+                <div className="card">
+                    <p>{time}</p>
+                    <button onClick={() => getTime()}>
+                        Update Time
+                    </button>
+                </div>
             </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
         </>
     )
 }

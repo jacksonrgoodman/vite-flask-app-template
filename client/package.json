@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "vite preview",
+        "serve": "vite build && vite preview",
         "serve-api": "cd ../server && flask run",
         "test-api": "cd api && flask test",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
